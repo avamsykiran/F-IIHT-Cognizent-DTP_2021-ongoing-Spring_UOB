@@ -1,0 +1,9 @@
+<beans>
+	<bean id="gs1" class="com.cts.scd.service.GreetServiceSimpleImpl"/>
+	
+	<bean id="gs2" class="com.cts.scd.service.GreetServiceTimeBasedImpl"/>
+	
+	<bean id="ws" class="com.cts.scd.ui.WelcomeScreen">
+		<property name="greetService" ref="gs1" />
+	</bean>
+</beans>

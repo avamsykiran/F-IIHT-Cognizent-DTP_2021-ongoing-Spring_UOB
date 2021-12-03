@@ -1,0 +1,14 @@
+
+w
+java:S1128"GRemove this unused import 'com.cts.scd.service.GreetServiceSimpleImpl'.(ƒ¼£¶üÿÿÿÿH'RMINORZ
+CODE_SMELL
+z
+java:S1128"JRemove this unused import 'com.cts.scd.service.GreetServiceTimeBasedImpl'.(«ÁîüúÿÿÿÿH(RMINORZ
+CODE_SMELL
+¯
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ª«á‹H)RCRITICALZ
+CODE_SMELL
+c	java:S106"9Replace this use of System.out or System.err by a logger.(¬Èÿ×H*RMAJORZ
+CODE_SMELL
+h	java:S106"9Replace this use of System.out or System.err by a logger.(¿ëÍ¥øÿÿÿÿH+RMAJORZ
+CODE_SMELL

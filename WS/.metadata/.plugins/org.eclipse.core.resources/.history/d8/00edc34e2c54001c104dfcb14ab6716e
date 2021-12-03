@@ -1,0 +1,10 @@
+package com.cts.scd.service;
+
+public class GreetServiceTimBasedImpl implements GreetService{
+
+	@Override
+	public String greet(String userName) {
+		return String.format("Hello! %s!",userName);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.cts.scd;
+
+import com.cts.scd.ui.WelcomeScreen;
+
+public class App {
+
+	public static void main(String[] args) {
+		WelcomeScreen screen= new WelcomeScreen();
+		screen.show();
+	}
+
+}

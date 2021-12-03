@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+F:\IIHT\Cognizent\DTP_2021\ongoing\Spring_UOB\WS\.metadata\.plugins\org.eclipse.jdt.core
+3848845858.index
+2456783540.index
+2086792088.index
