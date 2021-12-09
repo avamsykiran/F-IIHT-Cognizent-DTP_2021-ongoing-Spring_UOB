@@ -1,0 +1,16 @@
+
+j	java:S106"9Replace this use of System.out or System.err by a logger.(Œ–Ì¦8Øí«÷Ù/HMRMAJORZ
+CODE_SMELL
+}
+java:S1192"HDefine a constant instead of duplicating this literal "counter" 6 times.(Œ–Ì¦8¡ö¬÷Ù/HORCRITICALZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(Œ–Ì¦8¡ö¬÷Ù/HPRMAJORZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(Œ–Ì¦8¡ö¬÷Ù/HQRMAJORZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(Œ–Ì¦8¡ö¬÷Ù/HRRMAJORZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(Œ–Ì¦8¡ö¬÷Ù/HSRMAJORZ
+CODE_SMELL
+j	java:S106"9Replace this use of System.out or System.err by a logger.(Œ–Ì¦8¡ö¬÷Ù/HTRMAJORZ
+CODE_SMELL

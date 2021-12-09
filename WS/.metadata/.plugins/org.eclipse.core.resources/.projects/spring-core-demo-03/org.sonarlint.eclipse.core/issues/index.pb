@@ -5,3 +5,5 @@ _
 /src/main/java/com/cts/scd/ui/WelcomeScreen.java,a\4\a4ba3432d23bda3f7c999096baa3bca9c51c9f09
 L
 src/main/resources/beans.xml,3\9\391dcc488988192fbd8ef1f6b10cb4923f354042
+^
+.src/main/java/com/cts/scd/service/Counter.java,0\1\01413b5fba51b8ced7ed2252132b14280ef040d9

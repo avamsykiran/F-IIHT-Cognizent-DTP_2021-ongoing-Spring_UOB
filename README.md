@@ -173,4 +173,61 @@ Spring
                         EmployeeService empSer = (EmployeeService)context.getBean("empService");
                         
                  2. Annotation Based Configuaration
-                 3. Java Based Configuaration                    
+
+                    @Configuaration                                                         <beans> </beans>
+                    @ComponentScan(basePackage="packageNameThatContainsAllOurComponents")
+                    public class AppConfig {
+
+                    }
+
+                    @Component                              <bean id="counter" class="com.cts.service.Counter"/>
+                    public class Counter{
+
+                    }
+
+                    @Component("c1")                        <bean id="c1" scope="prototype" 
+                    @Scope("prototype")                         class="com.cts.service.Counter"/>
+                    public class Counter{
+
+                    }
+
+                    @Component
+                        @Service
+                        @Repository
+                        ..........etc
+
+                    @Autowired                          getter          getter injection byType
+                                                        constructor     constructor injection byType
+                                                        field           field injection byType
+
+                    @Autowired                          byName
+                    @Qualifier("beanId") 
+
+                    externalized field configs using .properties and SpEL
+                    ------------------------------------------------------------
+
+                        application.properties
+                            key1=value
+                            key2=value
+                            key3=value
+
+                        @PropertySource("classpath:application.properties") along with @Configuaration
+
+                        @Value("${key1}")
+                        public String field1;
+
+                 3. Java Based Configuaration     
+
+                            is not an alternate to Annotation based config...
+                            but is a compliment to Annotation based config enabling bean creation for
+                            classes coming from a library or api or framework.....
+
+                            @Configuaration  
+                            public class AppConfig {
+
+                                @Bean
+                                public Scanner scan(){              <bean id="scan" class="java.util.Scanner" />
+                                    return new Scanner();
+                                }
+                            }
+

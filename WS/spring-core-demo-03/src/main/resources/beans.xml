@@ -3,12 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="gs1" class="com.cts.scd.service.GreetServiceSimpleImpl" />
+	<bean id="counter" scope="prototype" class="com.cts.scd.service.Counter" />
+	
+	<bean id="greetService1"
+		class="com.cts.scd.service.GreetServiceSimpleImpl" />
 
-	<bean id="greetService"
+	<bean id="greetService2"
 		class="com.cts.scd.service.GreetServiceTimeBasedImpl" />
 
-	<bean id="gs3"
+	<bean id="greetService3"
 		class="com.cts.scd.service.GreetServiceCustomizableImpl">
 		<property name="greeting" value="Namaskar" />
 	</bean>

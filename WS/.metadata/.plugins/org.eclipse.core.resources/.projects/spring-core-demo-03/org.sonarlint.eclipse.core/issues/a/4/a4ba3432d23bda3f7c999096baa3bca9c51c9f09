@@ -1,14 +1,18 @@
 
-w
-java:S1128"GRemove this unused import 'com.cts.scd.service.GreetServiceSimpleImpl'.(ƒ¼£¶üÿÿÿÿH7RMINORZ
-CODE_SMELL
 z
-java:S1128"JRemove this unused import 'com.cts.scd.service.GreetServiceTimeBasedImpl'.(«ÁîüúÿÿÿÿH8RMINORZ
+java:S1128"JRemove this unused import 'com.cts.scd.service.GreetServiceTimeBasedImpl'.(«ÁîüúÿÿÿÿH@RMINORZ
+CODE_SMELL
+c	java:S106,"9Replace this use of System.out or System.err by a logger.(¬Èÿ×H<RMAJORZ
+CODE_SMELL
+h	java:S106."9Replace this use of System.out or System.err by a logger.(ÕÃê½øÿÿÿÿHERMAJORZ
+CODE_SMELL
+w
+java:S1128"GRemove this unused import 'com.cts.scd.service.GreetServiceSimpleImpl'.(ƒ¼£¶üÿÿÿÿH=RMINORZ
 CODE_SMELL
 ¯
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ª«á‹H9RCRITICALZ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ª«á‹H>RCRITICALZ
 CODE_SMELL
-c	java:S106"9Replace this use of System.out or System.err by a logger.(¬Èÿ×H:RMAJORZ
+j	java:S106/"9Replace this use of System.out or System.err by a logger.(Û€´µ8þ¥†÷Ù/HFRMAJORZ
 CODE_SMELL
-h	java:S106"9Replace this use of System.out or System.err by a logger.(¿ëÍ¥øÿÿÿÿH;RMAJORZ
+o	java:S1060"9Replace this use of System.out or System.err by a logger.(‰áö«ýÿÿÿÿ8þ¥†÷Ù/HGRMAJORZ
 CODE_SMELL
