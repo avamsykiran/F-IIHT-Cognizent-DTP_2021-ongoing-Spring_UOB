@@ -231,3 +231,30 @@ Spring
                                 }
                             }
 
+    Spring Boot
+    ----------------------------------------------------------------------
+
+        another spring module that enables
+            1. auto configuaration
+            2. rapid application development
+            3. embeded servers
+
+        spring core and context     config the packages for scanning teh components and .property files
+        spring web mvc              config the dispatcherservlet, internal resource view resolver, request handler ..
+        spring security             config the security type, security rules, roles ...
+        spring data                 config the validators, datasources, .....
+    
+
+        if the above module are sued in conjunction with spring boot, the mentioned configs are automatically made,
+        and wtill allow to be customized.
+
+        @SpringBootApplication      =       @Configuaration + @ComponenetScan + @EnableAutoCofig + @ProeprtySource
+
+        application.properties      external configs...
+
+        1. start.spring.io      spring initializer
+        2. spring starter project wizard from STS
+        3. spring boot cli
+
+
+        

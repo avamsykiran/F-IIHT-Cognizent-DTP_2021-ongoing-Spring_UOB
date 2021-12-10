@@ -24,6 +24,10 @@ public class WelcomeScreen {
 	private GreetService greetService3;
 	
 	@Autowired
+	@Qualifier("greetServiceMultiLingualImpl")
+	private GreetService greetService4;
+	
+	@Autowired
 	private Scanner scan;
 
 	public WelcomeScreen() {
@@ -35,5 +39,6 @@ public class WelcomeScreen {
 		System.out.println(greetService1.greet(userName));
 		System.out.println(greetService2.greet(userName));
 		System.out.println(greetService3.greet(userName));
+		System.out.println(greetService4.greet(userName));
 	}
 }
