@@ -433,4 +433,19 @@ Spring
                 FROM Employee e                                     FROM emps e INNER JOIN dept d 
                                                                     ON e.deptId=d.deptId
 
+    Spring Data JPA
+    --------------------------------------------------------------
+
+        is a spring orm support module.
+        this module provides 
+            CrudRepository
+                |-- JpaRepository
+                        Optional<Entity> findById(id)
+                        List<Entity> findAll()
+                        Entity save(entity)
+                        void delete(entity)
+                        void deleteById(id)
+                        boolena existsById(id)
+                        .....
+
                                                                     
