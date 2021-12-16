@@ -476,3 +476,4 @@
 2021-12-10 17:30:31,297 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-12-10 17:30:31,297 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2021-12-10 17:30:31,297 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\IIHT\Cognizent\DTP_2021\ongoing\Spring_UOB\WS\spring-core-boot-demo\src\test\resources
+2021-12-15 14:05:48,556 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

@@ -256,5 +256,181 @@ Spring
         2. spring starter project wizard from STS
         3. spring boot cli
 
+    JPA-Hibernate
+    ---------------------------------------------------------------------
 
-        
+        JPA is a java ORM specification
+            Object Relational Mapping
+
+                                OOP                                 RDBMS
+        =====================================================================================================
+        EntityDef               class                               table
+        Enttity                 object                              record/row
+        Property                field                               column
+        Behaviours              methods                             ...........
+
+        Relationships
+         Has A (Associations)
+            Composition                                             emps    eid,fnm,basic,dno,city,street
+                                class Address {
+                                    int dno
+                                    String city
+                                    String street
+                                }
+
+                                class Employee{
+                                    long empId
+                                    String fullName;
+                                    double basic;
+                                    Address address;
+                                }
+
+            Aggregation
+                OneToOne
+                                class Employee{                   emps    eid,fnm,basic
+                                    long empId
+                                    String fullName;
+                                    double basic;
+                                    BankAccount salAccount;
+                                }
+
+                                class BankAccount {                accs   accNum,ifsc,bank,eid
+                                    long accNum
+                                    String ifsc;
+                                    String bank;
+                                    Employee holder;
+                                }
+
+                OneToMany       class Department {                depts   deptId,title
+                ManyToOne           int deptId
+                                    String title
+                                    Set<Employee> emps
+                                }
+
+                                class Employee{                   emps    eid,fnm,basic,deptId
+                                    long empId
+                                    String fullName;
+                                    double basic;
+                                    Department dept;
+                                }
+
+                ManyToMany      
+                                class Employee{                   emps    eid,fnm,basic
+                                    long empId
+                                    String fullName;
+                                    double basic;
+                                    Set<Project> projects;
+                                }    
+                                                                  emp_prjs  eid,prjid
+
+                                class Project{                    prjs    prjId,title
+                                    long projectId
+                                    String title
+                                    Set<Employee> team
+                                }
+
+                                class Employee{                   emps    eid,fnm,basic
+                                    long empId
+                                    String fullName;
+                                    double basic;
+                                    Set<Memebership> memeberShips
+                                }    
+
+                                class Project{                    prjs    prjId,title
+                                    long projectId
+                                    String title
+                                    Set<Memebership> memeberShips
+                                }
+                                
+                                class MemberShip {                members   msid,empid,prjid,sdate,edate,role
+                                    long msId
+                                    Employee    teamMember
+                                    Project     project
+                                    LocalDate   startDate
+                                    LocalDate   endDate
+                                    String      role
+                                }
+
+         Is A (Geenralization)
+
+                                class Employee {                            Single Table
+                                    long empid                                  all_emps
+                                    String fullName                                 eid,fnm,basic,duration,allowence
+                                    double basic
+                                }                                           Joined Table
+                                                                                emps    eid,fnm,basic
+                                class ContractEmployee extends Employee{        cemps   eid,duration
+                                    int duration                                mgrs    eid,allowence
+                                }
+                                                                            Table Per Class
+                                class Manager extends Employee {                emps_only   eid,fnam,basic
+                                    double allowence                            cemps_only  eid,fnam,basic,duration
+                                }                                               mgrs_only   eid,fnam,basic,allowence
+    
+            Java Perssitence API
+
+                        Java Specifications         Implementations/Providers
+
+                            JDBC                        DB Driver
+                            Servlets                    Web Server (Tomcat/WildFly...)
+                            JPA                         Hibernate/IBates/....
+
+                    DB  <---> DB Driver <-----> JDBC  <----> Hibernate <----> JPA <---> Application
+
+                @Entity                     class level         
+                @Embedable                  class level
+                @Table                      class level
+
+                @Inheretence                class level
+                @DiscrimatorColumn          class level
+                @DiscrimatorValue           class level
+
+                @Column                     Field level
+                @Id                         Field level
+                @EmbededId                  Field level
+                @GeneratedValue             Field level
+                @Transiant                  Field level
+                @Embeded                    Field level
+
+                @Enumarated                 Field level
+
+                @OneToOne                   Field level
+                @OneToMany                  Field level
+                @ManyToOne                  Field level
+                @ManytoMany                 Field level
+
+                @JoinColumn                 Field level
+                @JoinTable                  Field level
+
+
+                JPA API                                             Hibernate API
+                -------------------------------------------         ---------------------------------------
+                Persistence::createEntityManagerFactory()               Configuaration::buidlSessionFactory()
+                    EntityManagerFactory::createEntityManager()             SessionFactory::createSession()
+                        EntityManager::                                         Session::
+                            persist(entity)                                         save(entity)
+                            remove(entity)                                          delete(entity)
+                            merge(eneity)
+                            find(class,id)                                          get(class,id)
+                            getTranaction()                                         getTransaction()
+                                EntityTransaciton::commit()                             Transaction::rollback()
+                                EntityTransaciton::rollback()                           Transaction::commit()    
+                            createQuery(query)                                      createQeury(query)
+                                Query::getResultList()                                  Query.....
+
+                JPQL/HQL                                            SQL
+                ---------------------------------------------       --------------------------------------
+
+                SELECT e FROM Employee e                            SELECT * FROM emps
+
+                SELECT e.empId,e.fullName FROM Employee e           SELECT eid,fnm FROM emps
+
+                SELECT e                                            SELECT *
+                FROM Employee e                                     FROM emps
+                WHERE e.basic between 50000 and 500000              WHERE basic between 50000 and 500000
+
+                SELECT e.fullNamd as ename,e.dept.title as dname    SELECT e.fnm as 'ename',d.title as 'dname'
+                FROM Employee e                                     FROM emps e INNER JOIN dept d 
+                                                                    ON e.deptId=d.deptId
+
+                                                                    
