@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class Employee implements Comparable<Employee>{
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="eid")
 	private Long empId;
 	
