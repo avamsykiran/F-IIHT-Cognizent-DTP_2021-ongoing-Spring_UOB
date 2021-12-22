@@ -448,4 +448,44 @@ Spring
                         boolena existsById(id)
                         .....
 
-                                                                    
+      existsBy
+      findBy
+      findAllBy
+
+        class Employee{
+            private Long empId;
+            private String fullName;
+            private Double basic;
+            private String mobile;
+            private String designation;
+            ....
+        }       
+
+        interface EmployeeMobileNameModel {
+            String getFullName();
+            String getMobile();
+        }
+
+        interface EmployeeCountByDesignationModel {
+            String getDesignation();
+            Integer getEmployeeCount();
+        }        
+
+        interface EmployeeRepo extends JpaRepository<Employee,Long>{
+        
+             Optional<Employee> findByMobile(String mobile);  
+             List<Employee> findAllByFullName(String fullName); 
+
+             boolean existsByMobile(String mobile);
+
+             @Query("SELECT e FROM Employee e WHERE e.basic BETWEEN :lower AND :upper")
+             List<Employee> getAllInBasicRange(Double lower,Double upper);
+
+             @Query("SELECT e.mobile as mobile,e.fullName as fullName FROM Employee e")
+             List<EmployeeMobileNameModel> getMobileAndNames();
+
+             @Query("SELECT e.designation as designation,COUNT(e) as employeeCount FROM Employee e GROUP BY e.desingation")
+             List<EmployeeCountByDesignationModel> getEmployeeCountByDesignation();
+        }
+
+

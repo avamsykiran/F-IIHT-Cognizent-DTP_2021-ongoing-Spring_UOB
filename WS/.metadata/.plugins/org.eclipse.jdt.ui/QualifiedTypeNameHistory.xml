@@ -28,7 +28,6 @@
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="javax.persistence.Embedded"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
@@ -40,11 +39,18 @@
 <fullyQualifiedTypeName name="org.springframework.boot.CommandLineRunner"/>
 <fullyQualifiedTypeName name="com.cts.sdbd.repos.DepartmentRepo"/>
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
-<fullyQualifiedTypeName name="com.cts.sdbd.entities.Employee"/>
 <fullyQualifiedTypeName name="com.cts.sdbd.entities.Address"/>
 <fullyQualifiedTypeName name="com.cts.sdbd.entities.BankAccount"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.cts.sdbd.entities.Department"/>
 <fullyQualifiedTypeName name="com.cts.sdbd.repos.EmployeeRepo"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="javax.persistence.Inheritance"/>
+<fullyQualifiedTypeName name="javax.persistence.DiscriminatorColumn"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.DiscriminatorValue"/>
+<fullyQualifiedTypeName name="com.cts.sdbd.entities.Employee"/>
+<fullyQualifiedTypeName name="org.hibernate.service.spi.Manageable"/>
+<fullyQualifiedTypeName name="com.cts.sdbd.entities.Manager"/>
+<fullyQualifiedTypeName name="com.cts.sdbd.entities.ContractEmployee"/>
 </qualifiedTypeNameHistroy>
