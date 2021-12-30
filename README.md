@@ -488,4 +488,75 @@ Spring
              List<EmployeeCountByDesignationModel> getEmployeeCountByDesignation();
         }
 
+    Spring Web MVC 
+    --------------------------------------------------------------
+
+
+        MVC
+        ==================================================================
+        REPO <--model--> SERVICE <-model-> Controller (Servlet) <-----REQ
+                                            |
+                                            | (model)
+                                            |
+                                            View (JSP) -----------RESP--->
+        
+        Single Front Controller 
+        ==================================================================
+        
+        REPO <--model--> SERVICE <-model-> Controller <--model---> FrontController  <-----REQ
+                                                                        |
+                                                                        | (model)
+                                                                        |
+                                                                        View (JSP) --RESP--->
+
+
+        Repo        is a POJO that offers Persistence Logic
+        Servce      is a POJO that offers Bussiness Logic
+        Controller  is a POJO that offers request handling methods (actions)
+                        1. this class msut be annoted as @Controller
+                        2. the action methods in this class must return
+                                a) a view name as string or
+                                b) a view name and models as ModelAndView
+                        3. these action methods must be annoted with @RequestMapping(value="/url",method=GET/POST)
+
+                    @Controller
+                    public class DefaultController {
+
+                        @RequestMapping(value="/index",method=RequestMethod.GET)
+                        public String homeAction(){
+                            return "home-page";
+                        }
+
+                        @RequestMapping(value="/greet",method=RequestMethod.GET)
+                        public ModelAndView greetAction(String userName){
+                            return new ModelAndView("greet-page","greeting","Hello "+userName);
+                        }
+                    }
+
+            FrontController is  org.springframework.web.servlet.DispatcherServlet
+
+                    1. it receives all the request from the client
+                    2. It uses SimpleUrlHandlerResolver to locate the action and controller
+                            mapped to the incoming request.url
+                    3. Once the action and controller are identifed, the request parameters are 
+                            collected and the action method is executed.
+                    4. Using ViewResolver , the DispatcherServlet will lcoate the actual view
+                            and will share the model with the view.
+
+
+            ViewResolver (interface)
+                        that can should locate a view given a view-name
+
+                        XmlResourceViewResolver                 .xml    (view-name,view paths)
+                        MessageBundleResourceViewResolver       .properties (view-name=view-path)
+                        InternalResourceViewResolver
+                                prefix      /pages/
+                                suffix      .jsp
+
+                                view-path = prefix + view-name + suffix
+
+                                /pages/home-page.jsp
+                                /pages/greet-page.jsp
+
+
 
