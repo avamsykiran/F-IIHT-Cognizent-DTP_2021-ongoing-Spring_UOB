@@ -8,6 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -20,11 +25,20 @@ public class Employee {
 	@Column(name="eid")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long empId;
+	
 	@Column(name="fnm",nullable = false)
+	@NotBlank(message = "Full Name is a mandatory field")
 	private String fullName;
+	
+	@NotNull(message ="Join Date is a mandatory field")
+	@PastOrPresent(message = "Join Date can not be a future date")
 	@DateTimeFormat(iso=ISO.DATE)
 	@Column(name="jdt",nullable = false)
 	private LocalDate joinDate;
+	
+	@NotNull(message ="Salary is a mandatory field")
+	@Min(value = 2000,message = "Salary can not be less than 2000")
+	@Max(value=100000,message="Salary can not be more than 100000" )
 	@Column(name="sal",nullable = false)
 	private Double salary;
 	

@@ -4,5 +4,6 @@
 </header>
 <nav>
 	<a href="/home">Home</a> <span> | </span>
-	<a href="/empList">Employees List</a>
+	<a href="/empList">Employees List</a><span> | </span>
+	<a href="/addEmp">New Employee</a>
 </nav>

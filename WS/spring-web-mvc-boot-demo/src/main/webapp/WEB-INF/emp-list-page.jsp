@@ -15,7 +15,7 @@
 				<table style="width:100%;border:1px solid #000000;">
 					<thead>
 						<tr>
-							<th>EmpId</th><th>Name</th><th>Join Date</th><th>Salary</th>
+							<th>EmpId</th><th>Name</th><th>Join Date</th><th>Salary</th><th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,6 +25,7 @@
 								<td>${e.fullName }</td>
 								<td>${e.joinDate }</td>
 								<td>${e.salary }</td>
+								<td><a href="/details?eid=${e.empId }">DETAILS</a>
 							</tr>
 						</c:forEach>
 					</tbody>
