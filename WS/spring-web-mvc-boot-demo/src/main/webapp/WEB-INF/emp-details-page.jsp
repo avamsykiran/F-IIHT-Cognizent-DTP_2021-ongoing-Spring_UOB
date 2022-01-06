@@ -37,6 +37,13 @@
 						<td><strong>Salary</strong></td>
 						<td>${emp.salary }</td>
 					</tr>
+					<tr>
+						<td style="text-align:right;" colspan="2">
+							<a href="/editEmp?eid=${emp.empId }">EDIT </a>
+							<span> | </span>
+							<a href="/deleteEmp?eid=${emp.empId }">DELETE </a>
+						</td>
+					</tr>
 				</table>
 			</c:otherwise>
 		</c:choose>

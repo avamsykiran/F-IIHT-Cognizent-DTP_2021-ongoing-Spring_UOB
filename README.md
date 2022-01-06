@@ -559,4 +559,40 @@ Spring
                                 /pages/greet-page.jsp
 
 
+    REST api
+    ------------------------------------------------------------------------------
 
+        Web Application
+            REPO <--model--> SERVICE <-model-> Controllers <-model-> VIEWS (JSP) 
+
+        Andriod Application
+            REPO <--model--> SERVICE <-model-> Controllers <-model-> VIEWS (Andriod Views) 
+
+        Windows/Linux Standalone Application
+            REPO <--model--> SERVICE <-model-> Controllers <-model-> VIEWS (Java Swing/Java AWT/.Net winforms) 
+
+    
+        Using Web Service
+
+            BaackEnd (SOAP WebService)  <-----------SOAP protocol---->      UI/UX
+
+                                                                                  JSP      
+                                                                                  Andriod
+                                                                                  Angular
+                REPO <--model--> SERVICE <-model-> Controllers   <---XML--->      ReactJS       
+                                                                                  Java Swings
+                                                                                  .Net Winforms
+                                                                                  VueJS
+
+             BaackEnd (RESTful WebService) <-----------HTTP protocol---->    UI/UX
+
+                                                                                    JSP      
+                                                                                    Andriod
+                                                                                    Angular
+                REPO <--model--> SERVICE <-model-> Controllers   <-JSON/XML/Bin->   ReactJS       
+                                                                                    Java Swings
+                                                                                    .Net Winforms
+                                                                                    VueJS
+
+            Isomnia
+            Postman
