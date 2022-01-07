@@ -594,5 +594,43 @@ Spring
                                                                                     .Net Winforms
                                                                                     VueJS
 
-            Isomnia
-            Postman
+            End Point       Url that is mapped to a action method 
+            Resource        Entity or Model on which the rest api is operated .
+
+            (+) Choose standards against documetation.
+
+                Resource is EmployeeEntity
+                Let the EndPoint be /employees
+
+                GET         /employees                      retrival of all employees
+                GET         /employees/101                  retrival of employee baring id=101
+                PUT         /employees                      updation of the whole employee record
+                PATCH       /employees                      partial updation of an employee record
+                POST        /employees                      creation of a new employee record
+                DELETE      /employees/101                  deletion the employee baring id=101
+
+            (+) Http Status Codes - can be used to communicate the status of the request.
+
+                1xx     to indicate that the request is received and is under process.
+                3xx     to indicate that the request is being redirected to a different resource
+
+                2xx     to indicate the successful compeltion of the requested operation
+                    200     OK          sent in resposne to a GET request
+                    201     CREATED     sent in resposne to a POST request
+                    202     ACCEPTED    sent in resposne to a PUT/PATCH request
+                    204     NO CONTENT  sent in resposne to a DELETE request
+
+                4xx     to indicate that the request could not be honored due to a client side issue
+                    404     NOT FOUND   sent in resposne to a GET/DELETE request when the gicne resource is not found
+                    .....
+
+                5xx    to indicate that the request could not be honored due to a server side issue
+                    500     INTERNAL SERVER ERROR
+
+
+            @RestController     =       @Controller + @ResponseBody
+
+            Action in a @Controller are expected to return a viewName with or without model, the render html will
+            be the response body
+
+            Action in a @RestController are expected to return the model which becomes the response body
